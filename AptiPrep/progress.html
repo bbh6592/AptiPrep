@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AptiPrep Helper</title>
+  <style>
+    body {
+      width: 300px;
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      background-color: #f0f8ff;
+      text-align: center;
+      position: relative;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .resource-links, .progress-container {
+      display: none;
+      margin-top: 20px;
+    }
+    .resource-links a, .progress-container label {
+      display: block;
+      margin-bottom: 5px;
+      padding: 10px;
+      background-color: white;
+      color: #1e90ff;
+      text-decoration: none;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    .resource-links a:hover, .progress-container label:hover {
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    #tip-container {
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-top: 20px;
+      background-color: black;
+      padding: 10px 0;
+    }
+    #tip {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll 10s linear infinite;
+      color: white;
+    }
+    @keyframes scroll {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+    .date {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 14px;
+      color: #000;
+      font-weight: bold;
+    }
+    .progress-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 24px; /* Adjust as needed */
+      height: 24px; /* Adjust as needed */
+      cursor: pointer;
+    }
+    .progress-container {
+      display: none;
+    }
+    .progress-container label {
+      display: block;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="date" id="date"></div>
+  <img src="icons/progress-icon.png" id="progress-icon" class="progress-icon" alt="Progress Icon"> <!-- Placeholder for your icon -->
+  <h1>AptiPrep</h1>
+  <button id="show-resources">Hey there! I'm here to give you resources for aptitude</button>
+  <div class="resource-links" id="resource-links">
+    <a href="https://www.indiabix.com/aptitude/questions-and-answers/" target="_blank" rel="noopener" class="resource-link" data-topic="Arithmetic">Arithmetic</a>
+    <a href="https://www.indiabix.com/data-interpretation/questions-and-answers/" target="_blank" rel="noopener" class="resource-link" data-topic="Data Interpretation">Data Interpretation</a>
+    <a href="https://www.indiabix.com/verbal-ability/questions-and-answers/" target="_blank" rel="noopener" class="resource-link" data-topic="Verbal Ability">Verbal Ability</a>
+    <a href="https://www.indiabix.com/logical-reasoning/questions-and-answers/" target="_blank" rel="noopener" class="resource-link" data-topic="Logical Reasoning">Logical Reasoning</a>
+    <a href="https://www.indiabix.com/non-verbal-reasoning/questions-and-answers/" target="_blank" rel="noopener" class="resource-link" data-topic="Non Verbal Reasoning">Non Verbal Reasoning</a>
+    <a href="https://www.indiabix.com/verbal-reasoning/questions-and-answers/" target="_blank" rel="noopener" class="resource-link" data-topic="Verbal Reasoning">Verbal Reasoning</a>
+  </div>
+  <div id="tip-container">
+    <div id="tip">Loading daily tip...</div>
+  </div>
+  <div class="progress-container" id="progress-container">
+    <h2>Track Progress</h2>
+    <div class="checkbox-container" id="checkbox-container">
+      <label><input type="checkbox" data-topic="Arithmetic"> Arithmetic</label>
+      <label><input type="checkbox" data-topic="Data Interpretation"> Data Interpretation</label>
+      <label><input type="checkbox" data-topic="Verbal Ability"> Verbal Ability</label>
+      <label><input type="checkbox" data-topic="Logical Reasoning"> Logical Reasoning</label>
+      <label><input type="checkbox" data-topic="Non Verbal Reasoning"> Non Verbal Reasoning</label>
+      <label><input type="checkbox" data-topic="Verbal Reasoning"> Verbal Reasoning</label>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
